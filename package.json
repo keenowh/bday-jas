@@ -1,0 +1,17 @@
+{
+  "name": "birthday-bam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "autoprefixer": "^9.7.5",
+    "postcss-cli": "^7.1.0",
+    "tailwindcss": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "postcss css/tailwind.css -o public/build/tailwind.css"
+  },
+  "author": "Keen",
+  "license": "MIT"
+}

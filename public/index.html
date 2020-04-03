@@ -1,0 +1,118 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/build/tailwind.css" />
+  </head>
+  <body
+    class="flex flex-col justify-center items-center w-full py-20 bg-gray-300"
+  >
+  
+ 
+    <div class="bg-white p-6 rounded-lg border mx-auto shadow-xl">
+      <div class="border-solid rounded-full border-4 border-gray-600">
+        <img src="/public/asset/jes.jpg"  class="border-solid w-32 mx-auto -mt-24 rounded-full" alt="" srcset="">
+      
+      </div>
+      <h1 class="text-4xl antialiased font-bold text-center mt-4 text-blue-500">
+        Happy Birthday
+        <span class="text-indigo-500">Jasmine!</span>
+      </h1>
+    </div>
+
+    <div class="bg-white p-6 rounded-lg border shadow-xl mx-auto m-10 mb-12">
+      <form id="person-select" onchange="selectChange()">
+        <div class="w-full px-3 mb-6">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-semibold mb-2" for="grid-state">
+            Select a QH individual
+          </label>
+          <div class="relative">
+            <select id="selectio"class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+              <option value="Renz Castillo">Renz Castillo (Your longtime Baby)</option>
+              <option value="Eulan Mallari">Eulan Mallari</option>
+              <option value="Mitzimar Albiso">Mitzimar Albiso</option>
+              <option value="Rhaysan Lavigne">Rhaysan Lavigne</option>
+              <option value="Kliezl Eclipse">Kliezl Eclipse</option>
+              <option value="">Keen Ballon</option>
+              <option value="Jeruzhelle Salaver">Jeruzhelle Salaver</option>
+              <option value="Meline Pastrana">Meline Pastrana</option>
+              <option value="Lou Jerlene Tabor">Lou Jerlene Tabor</option>
+              <option value="Ruth Table">Ruth Table</option>
+              
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+          </div>
+        </div>
+    </div>
+
+        <div id="content"></div>
+
+
+      </form>
+    </div>
+  </body>
+
+  <script>
+    
+
+    let greetArr = {
+      "Kliezl Eclipse": {"name": "Kliezl", "emoji": "👌🏼", "quality": "Gurl is talented af sa maraming bagay like maraming bagay uwu (singing public speaking arts and other stuff)", "memory": "OTRAMNL<br>QH Dates<br>Gold and HM Days<br>Animo Serenata and Ministahp Dates", "message": "ETO NANAMAN TAYO EH TUMATANDA NANAMAN MGA ELDEST SA KYU EYTS HAHAHAHAHA Gurl you stay healthy noon ka pa sakitin bawal na yan you take good care of yo self ilyssssssm you keep slayin' like you always do. I can't wait to see you guys again hopefully soon huhuhu stream Heartbreak Weather charot HAHAHA LABAAAAAN", "img": "/public/asset/kle.jpg"},
+
+      "Mitzimar Albiso": {"name": "Mitchi Mitchu U", "emoji": "🤪", "quality": "Full of energy <br>Caring<br>Witty<br>Laging andiyan anytime for you<br>Galing kumantaaaa! Wooo!<br>The Senyora as always<br>Matured mag-isip pag seryosong usapan pero laging maloko", "memory": "Hmm the time when she was recording a song and we took a video of it jamming with song.<br>Yung pinanood niya yung music video ng isang song way back grade 9 nung nakila Renz kami 😉<br>Yung mga malokong usapan namin pero samin nalang yun😛😉", "message": "Hi Jassyyyyy! Happy Happy Birthdayyyyyyy!!! 🎂🎉🤗 Omg u so old na jokeeee HAHAHAHA ahhh I miss youuuuu so muchhhh! Bond soon please? I want some updates with yo life and may mga kwento din ako! I wish for your happiness, safety and good life ngayon. I wanna say na sobrang thankful ako sayo up until now kasi kahit di tayo madalas nagkikita and nakakapag-usap wala pading nagbabago, lagi padin kita nasasabihan ng mga bagay bagay about sakin 😞 grabe I love youuuu so muchhh! Alam ko mags six years na tayo magkaibgan and sobrang natutuwa ako dun kasi kung iisipin mo lahat ng tao na yun sobrang daming nangyari pero yung bond and friendship natin ganun padin. I'm really happy to see all growth we had during those years and I wanna say na I really appreciate you, Jas and I will always be your number 1 fan sa pagkanta mo.. sama mo na din pala QH baka kumontra sabihin ako lang ay HAHAHAHAHAHA pero ayun happy natal day ulit! Always remember andito lang ako lagi if you need me, I will always help you with any way I can. I love you and I miss you! Bond soon, bebe!❤🤗", "img": "/public/asset/mitzi.jpg"},
+
+      "Eulan Mallari": {"name": "Eulan", "emoji": "😈", "quality": "She's very honest and straightforward", "memory": "Alfamart kwentuhan after mag laro ng Apex hahahhaha", "message": "Get that pu$$y boss xoxo", "img": "/public/asset/eul.jpg"},
+
+      "Lou Jerlene Tabor": {"name": "Lou Jerlene", "emoji": "🤪", "quality": "Super motherly niya and pagiging trustworthy niya hekhek tas ang kalog sobraaa, last na, magaling manggaya ng teacher", "memory": "Tuwing ginagaya niya si mam soriano hahahah yung sa nlex super funny ", "message": "HAPPY BIRTHDAY JASSSS!!! We love youuuu so muchh I miss u so muchhh. Thank you dahil magkaibigan pa rin tayo hanggang ngayon hehehehe yun lang ingat ka palagi mahal na mahal ka naminnnn ienjoy mo lang yung araw mo kahit quarantine ang lahat pero basta sana magkita na tayo uletttt hehehe yun lang see u soon hbd ulet sksksksk", "img": "/public/asset/jerlen.jpg"},
+
+      "Rhaysan Lavigne": {"name": "Ishan", "emoji": "💁‍♀️💁‍♀️💁‍", "quality": " She's a ball of sunshine, always bring joy to others and has an angelic voice ", "memory": "hmm every moment is memorable, but yung mga moments na cinocomfort nya ako when im going thu shit, huhu", "message": "", "img": "/public/asset/rhay.jpg"},
+      
+      "Ruth Table": {"name": "Ruthy", "emoji": "🤴🏻🤦🏻‍♀️🤷🏻‍♀️🔥🧁", "quality": "She’s versatile and very caring person ever since the start of the friendship<br>She’s too humble that makes her a wholesome person<br>A compassionate friend you can count on", "memory": "Too many to mention because every bonding moments we have are all the best walang mitis an bangis ni Jasmine", "message": "Happy Birthday Nee-chan, Thru thick and thin dito lang parati ang QH para sa iyo. Mahal na mahal ka namin hanggang dulo na ituuu ❤️🔥", "img": "/public/asset/ruth.jpg"},
+
+      "Jeruzhelle Salaver": {"name": "Jeruuu", "emoji": "🎤", "quality": "Gusto ko kay jasmine ung buong pagkatao niya kasi pinapakita niya ung totoong siya lalo na ung pagiging bitch niya HAHAHAHAHA labyu jas", "memory": "Memorable moments ko sa kanya kapag pinagtitripan niya ung mga teacher natin kasama ang buong qh", "message": "Habaduuuu senyoraaaa u will always be my anak-anakan hahahaha i will forever treasure ang lahat ng pagkakaibigan natin ever since na magkakilala tau nandito lng namn me always to support u sa lahat ng ganap and plans mo sa layf un lng at di ko na papahabain to kasi alam kong alam mo na da rest hahahahahaha love u my senyora and enjoy ur day mwa", "img": "/public/asset/jer.jpg"},
+      
+      "Renz Castillo": {"name": "Renz", "emoji": "😎", "quality": "maingay", "memory": "let it go cover ft eulan and me", "message": "POKPOK KA! 😘", "img": "/public/asset/renz.jpg"},
+    }
+
+    function selectChange() {
+      let x = document.getElementById('selectio').value;
+      
+      // const div = document.createElement('div');
+const div = document.getElementById('content');
+  div.className = 'bg-white p-6 rounded-lg border shadow-xl mx-auto my-2 max-w-md';
+
+  div.innerHTML = `
+  
+  <img src="${greetArr[x].img}"  class="border-solid w-32 mx-auto  rounded-full" alt="" srcset="">
+  <div class="py-2">
+  
+    <p class=" font-bold text-4xl text-center">${greetArr[x].name}</p>
+  </div>
+  <hr>
+  <div class="py-4">
+    <div class="font-bold text-xl mb-2">What emoji fits Jasmine the most for you?</div>
+    <p class="bg-gray-300 rounded full font-mono text-4xl text-center p-4">${greetArr[x].emoji}</p>
+  </div>
+  <div class="py-4">
+    <div class="font-bold text-center text-xl mb-2">Your favorite qualities to Jasmine</div>
+    <p class="bg-gray-300 rounded full font-mono text-center p-4">${greetArr[x].quality}</p>
+  </div>
+  <div class="py-4">
+    <div class="font-bold text-xl  text-center mb-2">Memorable moments with the <span class="bg-violet-500">BITCH</span></div>
+    <p class="bg-gray-300 rounded full font-mono text-center p-4">${greetArr[x].memory}</p>
+  </div>
+  <div class="py-4">
+    <div class="font-bold text-center text-xl mb-2">Your Birthday Message</div>
+    <p class="bg-gray-300 rounded full font-mono text-center p-4">${greetArr[x].message}</p>
+  </div> 
+
+  `;
+
+  // document.getElementById('content').appendChild(div);
+}
+
+selectChange();
+  </script>
+</html>
