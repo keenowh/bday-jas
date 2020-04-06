@@ -6,29 +6,29 @@
     <link rel="stylesheet" href="./styles/tailwind.css" />
   </head>
   <body
-    class="flex flex-col justify-center items-center w-full py-24 bg-gray-300"
+    class="flex flex-col justify-center items-center w-full py-24 bg-gray-800"
   >
   
  
-    <div class="bg-white mt-12 p-6 rounded-lg border mx-auto shadow-xl">
-      <div class="rounded-full">
-        <img src="./asset/jes.jpg"  class=" w-32 mx-auto -mt-24 rounded-full" alt="" srcset="">
-      
+    <div class="bg-gray-300 max-w-sm overflow-hidden border-pink-300 mt-10 rounded-lg border mx-auto shadow-xl">
+      <div class="">
+        <img src="./asset/jes.jpg"  class="b" alt="" srcset="">
+        <!-- <div class="bg-cover h-48" style="background-image: url(./asset/jes.jpg);"></div> -->
       </div>
-      <h1 class="text-4xl antialiased font-bold text-center mt-4 text-blue-500">
-        Happy Birthday,
-        <span class="text-indigo-500">Jasmine!</span>
+      <h1 class="text-4xl -mt-40 p-4 antialiased font-bold text-white">
+        Happy Birthday,<br>
+        <span style="color: #FF69B4;">Jasmine!</span>
       </h1>
     </div>
 
-    <div class="bg-white p-6 rounded-lg border shadow-xl mx-auto m-10 mb-12">
+    <div class="bg-gray-800 p-6 rounded-lg border border-yellow-500 shadow-xl mx-auto m-10 mb-12">
       <form id="person-select" onchange="selectChange()">
         <div class="w-full px-3 mb-6">
-          <label class="block uppercase tracking-wide text-gray-700 text-xs font-semibold mb-2" for="grid-state">
+          <label class="block uppercase tracking-wide text-white text-xs font-semibold mb-2" for="grid-state">
             Select a QH individual
           </label>
           <div class="relative">
-            <select id="selectio"class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+            <select id="selectio" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
               <option value="Renz Castillo">Renz Castillo (Your longtime Baby)</option>
               <option value="Eulan Mallari">Eulan Mallari</option>
               <option value="Mitzimar Albiso">Mitzimar Albiso</option>
@@ -53,6 +53,13 @@
 
       </form>
     </div>
+
+    <div class="">
+      <p class="text-sm p-4 antialiased font-bold text-white">
+        © Que Horror "Slapsoil Chapter" 2020
+      </p>
+    </div>
+
   </body>
 
   <script>
